@@ -8,6 +8,10 @@ else
 	export WL_BITS=64
 fi
 
+if [ ! -d $WLROOT ]; then
+	mkdir -p $WLROOT
+fi
+
 XWAYLAND=${WLROOT}/install/bin/Xwayland
 export DISTCHECK_CONFIGURE_FLAGS="--with-xserver-path=$XWAYLAND"
 

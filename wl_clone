@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/bin/wl_defines.sh
+. `dirname $0`/wl_defines.sh
 
 # TODO: Check if tree already exists first
 # TODO: Bail if errors
@@ -19,7 +19,7 @@ clone_or_update() {
 	echo
 	echo $dest
 	if [ ! -d ${dest} ]; then
-		git clone ${repo} ${dest}
+		git clone --depth=1 ${repo} ${dest}
 		if [ $? != 0 ]; then
 			echo "Error: Could not clone repository"
 			exit 1
@@ -51,7 +51,7 @@ clone_or_update git://github.com/xkbcommon/libxkbcommon
 clone_or_update git://anongit.freedesktop.org/mesa/mesa
 clone_or_update git://anongit.freedesktop.org/pixman
 clone_or_update git://anongit.freedesktop.org/cairo
-clone_or_update git://git.sv.gnu.org/libunwind
+clone_or_update git://git.savannah.gnu.org/libunwind
 clone_or_update git://anongit.freedesktop.org/libevdev
 clone_or_update git://anongit.freedesktop.org/wayland/wayland-protocols
 clone_or_update git://anongit.freedesktop.org/wayland/libinput
