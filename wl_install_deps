@@ -5,7 +5,7 @@
 # generic build dependencies for ubuntu
 sudo apt-get -y install autoconf automake bison debhelper dpkg-dev flex libtool
 sudo apt-get -y install pkg-config quilt python-libxml2
-sudo apt-get -y install libxml2-dev
+sudo apt-get -y install libxml2-dev libpng-dev libwacom-dev
 
 # wayland/weston specific stuff
 sudo apt-get -y install xmlto
